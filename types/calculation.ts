@@ -9,7 +9,6 @@ export interface RoomData {
   wallInsulationThickness: number;    // D51 in Excel
   ceilingInsulationThickness: number; // E51 in Excel
   floorInsulationThickness: number;   // F51 in Excel
-  internalFloorThickness: number;     // D53 in Excel
   
   // Transmission data (Excel U-factors)
   wallUFactor: number;     // C8 in Excel (0.295)

@@ -552,10 +552,10 @@ export const calculateBlastHeatLoad = (
   const ceilingTempDiff = ambientTempC - roomTempC;  // 43 - (-35) = 78K
   const floorTempDiff = 28 - roomTempC;              // 28 - (-35) = 63K (Excel uses 28°C for floor)
   
-  // Use user-provided U-factors directly (Excel C8, C9, C10)
-  const wallUFactor = roomData.wallUFactor;
-  const ceilingUFactor = roomData.ceilingUFactor;
-  const floorUFactor = roomData.floorUFactor;
+  // Calculate U-factors based on insulation thickness (Excel methodology)
+  const wallUFactor = calculateUFactor(roomData.wallInsulationThickness, roomData.insulationType);
+  const ceilingUFactor = calculateUFactor(roomData.ceilingInsulationThickness, roomData.insulationType);
+  const floorUFactor = calculateUFactor(roomData.floorInsulationThickness, roomData.insulationType);
   
   // TRANSMISSION LOADS - Excel formulas G8, G9, G10
   // Excel: =((E8*D8*C8)/1000)*3600*F8

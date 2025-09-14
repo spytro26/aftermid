@@ -148,13 +148,14 @@ export default function BlastProductTab() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f8fafc',
     },
     scrollView: {
         flex: 1,
     },
     content: {
         padding: 16,
+        paddingHorizontal: 20,
     },
     header: {
         marginBottom: 24,
@@ -170,18 +171,34 @@ const styles = StyleSheet.create({
         color: '#6b7280',
     },
     section: {
-        marginBottom: 32,
+        backgroundColor: '#ffffff',
+        borderRadius: 16,
+        padding: 20,
+        marginBottom: 20,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.08,
+        shadowRadius: 12,
+        elevation: 6,
+        borderWidth: 1,
+        borderColor: '#f1f5f9',
     },
     sectionTitle: {
-        fontSize: 18,
-        fontWeight: '600',
+        fontSize: 20,
+        fontWeight: '700',
         color: '#1e40af',
-        marginBottom: 4,
+        marginBottom: 16,
+        letterSpacing: -0.3,
     },
     sectionSubtitle: {
-        fontSize: 14,
-        color: '#6b7280',
-        marginBottom: 16,
+        fontSize: 16,
+        fontWeight: '600',
+        color: '#374151',
+        marginTop: 16,
+        marginBottom: 12,
     },
     footer: {
         marginTop: 32,

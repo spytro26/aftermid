@@ -18,9 +18,8 @@ const defaultRoomData: RoomData = {
     // Insulation parameters (from Excel)
     insulationType: 'PUF',              // Excel D50: PUF
     wallInsulationThickness: 100,       // Excel D51: 100mm
-    ceilingInsulationThickness: 100,    // Excel E51: 100mm
+    ceilingInsulationThickness: 100,    // Excel E51: 100mm  
     floorInsulationThickness: 100,      // Excel F51: 100mm
-    internalFloorThickness: 100,        // Excel D53: 100mm
 
     wallUFactor: 0.295,    // Excel C8: 0.295
     ceilingUFactor: 0.295, // Excel C9: 0.295

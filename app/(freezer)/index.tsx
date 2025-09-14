@@ -28,10 +28,6 @@ export default function FreezerRoomDetailsTab() {
     updateRoomData(field, numValue);
   };
 
-  const handleUFactorChange = (field: 'wallUFactor' | 'ceilingUFactor' | 'floorUFactor', value: string) => {
-    const numValue = parseFloat(value) || 0;
-    updateRoomData(field, numValue);
-  };
 
   const handleHoursChange = (field: 'wallHours' | 'ceilingHours' | 'floorHours', value: string) => {
     const numValue = parseFloat(value) || 0;
@@ -153,28 +149,6 @@ export default function FreezerRoomDetailsTab() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Transmission Load Parameters</Text>
 
-          <Text style={styles.subsectionTitle}>U-Factors (W/m²·K)</Text>
-          <InputField
-            label="Wall U-Factor"
-            value={roomData.wallUFactor.toString()}
-            onChangeText={(value) => handleUFactorChange('wallUFactor', value)}
-            unit="W/m²·K"
-          />
-
-          <InputField
-            label="Ceiling U-Factor"
-            value={roomData.ceilingUFactor.toString()}
-            onChangeText={(value) => handleUFactorChange('ceilingUFactor', value)}
-            unit="W/m²·K"
-          />
-
-          <InputField
-            label="Floor U-Factor"
-            value={roomData.floorUFactor.toString()}
-            onChangeText={(value) => handleUFactorChange('floorUFactor', value)}
-            unit="W/m²·K"
-          />
-
           <Text style={styles.subsectionTitle}>Hours of Load</Text>
           <InputField
             label="Wall Hours"
@@ -214,7 +188,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: 20,
+    padding: 16,
+    paddingHorizontal: 20,
   },
   header: {
     marginBottom: 32,
@@ -222,17 +197,19 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: '700',
     color: '#1e40af',
     marginBottom: 8,
     letterSpacing: -0.5,
+    textAlign: 'center',
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#64748b',
     textAlign: 'center',
     fontWeight: '500',
+    lineHeight: 22,
   },
   section: {
     backgroundColor: '#ffffff',
@@ -251,11 +228,12 @@ const styles = StyleSheet.create({
     borderColor: '#f1f5f9',
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '700',
     color: '#1e40af',
     marginBottom: 16,
     letterSpacing: -0.3,
+    textAlign: 'center',
   },
   subsectionTitle: {
     fontSize: 16,
